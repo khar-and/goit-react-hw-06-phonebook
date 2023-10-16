@@ -17,16 +17,9 @@ const contactsSlice = createSlice({
   initialState: phoneContacts,
   reducers: {
     //Добавление нового контакта
-    addContact: {
-      reduser(state, action) {
-        state.items.push(action.payload);
-      },
+    addContact(state, action) {
+      state.items.push(action.payload);
     },
-    // prepare(newContact) {
-    //   return {
-    //     payload: { id: nanoid(), ...newContact }, // Подготовка данных для добавления контакта с уникальным идентификатором
-    //   };
-    // },
     removeContact(state, action) {
       const index = state.items.findIndex(
         contact => contact.id !== action.payload
